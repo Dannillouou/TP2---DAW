@@ -13,7 +13,6 @@ function jogoDaMemoria(){
       this.classList.toggle('flip');
       cartasClicadas.push(this);
       id = this.getAttribute('id');
-      console.log(id);
       if(cartasClicadas.length == 2){
         jogoMemorial();
       }
@@ -33,14 +32,20 @@ function jogoDaMemoria(){
         cartasClicadas.forEach(card => {
           card.classList.toggle('flip');
         });
-        cartasClicadas = [];}, 500);
+        cartasClicadas = [];}, 600);
       }
     }
 }
   
 function Aleatorizador(){
 
-    let imgs = [], imgs_organizadas = [], i = 0, contador = 0;
+    let imgs = [], imgs_organizadas = [], i, contador = 0;
+
+    for(i=0; i< 16; i++){
+
+        imgs_organizadas.push(-1);
+
+    }
 
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg');
@@ -57,7 +62,7 @@ function Aleatorizador(){
 
         if(imgs_organizadas[posicao] < 0){
 
-            imgs_organizadas[posicao].push(imgs[i]);
+            imgs_organizadas[posicao] = imgs[i];
 
             contador++;
 
@@ -73,8 +78,8 @@ function Aleatorizador(){
 
     for (i = 1; i <= 16; i++){
 
-        var img = document.getElementById('teste');
-        img.src = 'teste';        
+        let img_definitiva = document.getElementById(i);
+        img_definitiva.src = imgs_organizadas[i]; 
 
     }
 
