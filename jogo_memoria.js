@@ -40,6 +40,7 @@ function jogoDaMemoria(){
 function Aleatorizador(){
 
     let imgs = [], imgs_organizadas = [], i, contador = 0;
+    let ids = [], ids_organizados = [];
 
     for(i=0; i< 16; i++){
 
@@ -48,13 +49,23 @@ function Aleatorizador(){
     }
 
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg');
+    ids.push('angular');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg');
+    ids.push('react');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ember/ember-original-wordmark.svg');
+    ids.push('ember');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg');
+    ids.push('c');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codecov/codecov-plain.svg');
+    ids.push('codecov');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg');
+    ids.push('python');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg');
+    ids.push('java');
     imgs.push('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg');
+    ids.push('html');
+
+    i = 0;
 
     while(i < 8){
 
@@ -63,6 +74,7 @@ function Aleatorizador(){
         if(imgs_organizadas[posicao] < 0){
 
             imgs_organizadas[posicao] = imgs[i];
+            ids_organizados[posicao] = ids[i]
 
             contador++;
 
@@ -76,10 +88,11 @@ function Aleatorizador(){
         }
     }
 
-    for (i = 1; i <= 16; i++){
+    for (i = 0; i < 16; i++){
 
-        let img_definitiva = document.getElementById(i);
-        img_definitiva.src = imgs_organizadas[i]; 
+        let img_definitiva = document.getElementById(i+1);
+        img_definitiva.parentNode.id = ids_organizados[i];
+        img_definitiva.src = imgs_organizadas[i];
 
     }
 
