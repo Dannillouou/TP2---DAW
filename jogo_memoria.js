@@ -4,7 +4,6 @@ var cartasClicadas = [];
 function flipCard() {
   this.classList.toggle('flip');
   cartasClicadas.push(this);
-  console.log(this);
   id = this.getAttribute('id');
   console.log(id);
   if(cartasClicadas.length == 2){
@@ -15,21 +14,16 @@ function flipCard() {
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 function jogoMemorial(){
-  if(cartasClicadas[0].id == cartasClicadas[1].id){
-    console.log("if");
-    /*cartasClicadas.forEach(card => {
-      card.parentNode.removeChild(card);
-    });*/
+  let id1 = cartasClicadas[0].getAttribute('id');
+  let id2 = cartasClicadas[1].getAttribute('id');
+  if(id1 === id2){
     cartasClicadas = [];
   }
   else{
-    /*cartasClicadas.forEach(card => {
+    setTimeout(() => { //delay de 1 segundo depois de clicar em cartas diferentes; tudo dentro de setTimeout demora um segundo para ser executado
+    cartasClicadas.forEach(card => {
       card.classList.toggle('flip');
-    });*/
-    console.log("else");
-    for(let i = 0; i < cartasClicadas.length; i++){
-      cartasClicadas[i].classList.toggle('flip');
-    }
-    cartasClicadas = [];
+    });
+    cartasClicadas = [];}, 1000);
   }
 }
