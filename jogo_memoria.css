@@ -53,3 +53,23 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
+
+#ganhou{
+
+    background-color: rgb(0, 131, 0);
+    width:  40em;
+    height: 7em;
+    position: absolute;
+    top: 85%;
+    right: 33.2%;
+    border-radius: 3em;
+    opacity: 0%;
+    
+}
+
+#ganhou_texto{
+
+    text-align: center;
+    padding-top: 2em;
+
+}
