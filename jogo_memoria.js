@@ -26,6 +26,7 @@ function jogoDaMemoria(){
       if(id1 === id2){
         cartasClicadas = [];
         cartasViradas += 2;
+
       }
       else{
         setTimeout(() => {
@@ -33,6 +34,12 @@ function jogoDaMemoria(){
           card.classList.toggle('flip');
         });
         cartasClicadas = [];}, 600);
+      }
+
+      if(cartasViradas == 16){
+
+        document.getElementById("ganhou").style.opacity = "100";
+
       }
     }
 }
