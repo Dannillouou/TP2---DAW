@@ -36,9 +36,9 @@ function jogoDaMemoria(){
         cartasClicadas = [];}, 600);
       }
 
-      if(cartasViradas == 16){
+      if(cartasViradas == 2){
 
-        document.getElementById("ganhou").style.opacity = "100";
+        document.getElementById("voce_ganhou").style.display = "flex";
 
       }
     }
